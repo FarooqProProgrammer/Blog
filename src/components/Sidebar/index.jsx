@@ -1,4 +1,6 @@
 import React from 'react'
+import { Categories } from '../../Data'
+import { Link } from 'react-router-dom'
 
 export default function Sidebar() {
     return (
@@ -106,24 +108,16 @@ export default function Sidebar() {
   menulist
       "
                     >
-                        <a href="/recents" className="">
-                            Recents
-                        </a>{" "}
-                        <a href="/category/showsha" className="">
-                            Showsha
-                        </a>{" "}
-                        <a href="/category/dinly" className="">
-                            Dinly
-                        </a>{" "}
-                        <a href="/category/astrology" className="">
-                            Astrology
-                        </a>{" "}
-                        <a href="/category/khaufnaak" className="">
-                            khaufnaak
-                        </a>{" "}
-                        <a href="https://mangobaazmag.com" title="MangoBaaz Magazine">
-                            Magazine
-                        </a>{" "}
+                        {Categories?.map((item) => {
+                            return (
+                                <Link href={item.path} className="">
+                                    {item.Name}
+                                </Link>
+                            )
+                        })}
+
+
+                        {" "}
                         <a className="flex items-center justify-between cursor-pointer">
                             More
                             <span>
