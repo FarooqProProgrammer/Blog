@@ -2,7 +2,10 @@ import React from 'react'
 import { Categories } from '../../Data'
 import { Link } from 'react-router-dom'
 
-export default function Sidebar() {
+export default function Sidebar({location}) {
+    if (location == '/login') {
+        return null
+    }
     return (
         <div
             className="
